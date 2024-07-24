@@ -3,6 +3,12 @@ import {db} from "@/lib/db";
 import {auth} from "@clerk/nextjs/server";
 import {Resource} from "@prisma/client";
 import {redirect} from "next/navigation";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: 'Section Detail Course',
+    description: 'Explore the detailed content of each section in our course. This includes an overview of the topics covered, learning objectives, and the key skills you will gain by completing the section. Get a clear understanding of what to expect and how each part contributes to your overall learning journey.',
+};
 
 const SectionDetailsPage = async ({
                                       params,

@@ -23,8 +23,8 @@ const CourseCard = async ({course}: { course: Course }) => {
                    height={300}
                    className={"rounded-t-xl w-[320px] h-[180px] object-cover"}
             />
-            <div className="px-4 py-3 flex flex-col gap-2">
-                <h2 className="text-lg font-bold hover:[#fdab04]">{course.title}</h2>
+            <div className="px-4 py-3 flex flex-col gap-2 w-[320px]">
+                <h2 className="text-lg font-bold break-words">{course.title.length > 50 ? course.title.substring(0, 50) + "..." : course.title}</h2>
                 <div className="flex justify-between text-sm font-medium">
                     {instructor && (
                         <div className={"flex gap-2 items-center"}>

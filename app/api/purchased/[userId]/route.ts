@@ -65,10 +65,12 @@ export const GET = async (request: NextRequest,
             const progressPercentage = publishSectionIds.length > 0
                 ? (completedSections / publishSectionIds.length) * 100
                 : 0; // Avoid division by zero
-
+            const maxLength = 50;
             courses.push({
                 id: course.id,
-                title: course.title,
+                title: course.title.length > maxLength
+                    ? course.title.substring(0, maxLength) + "..."
+                    : course.title,
                 imageUrl: course.imageUrl || "",
                 progressPercentage
             });

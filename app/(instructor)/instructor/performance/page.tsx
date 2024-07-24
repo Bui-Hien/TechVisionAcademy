@@ -3,6 +3,12 @@ import Chart from "@/components/performance/Chart"
 import DataCard from "@/components/performance/DataCard"
 import {auth} from "@clerk/nextjs/server"
 import {redirect} from "next/navigation"
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: 'Performance Course',
+    description: 'Explore the detailed content of our Performance Course. This includes an overview of the topics covered, learning objectives, and the key skills you will gain by completing the course. Get a clear understanding of what to expect and how each part contributes to your overall learning journey.',
+};
 
 const PerformancePage = async () => {
     const {userId} = auth()

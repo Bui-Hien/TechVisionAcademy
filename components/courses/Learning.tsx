@@ -23,12 +23,12 @@ const Learning = ({purchasedCourses, loading}: dataProps) => {
             <span
                 className="text-sm font-medium before:absolute before:top-5 before:w-full before:h-5 cursor-pointer">Learning</span>
             <div
-                className={`border border-gray-200 flex flex-col invisible  group-hover/item:visible absolute top-10 right-0 w-[300px] z-20 bg-white`}>
+                className={`border border-gray-200 flex flex-col invisible  group-hover/item:visible absolute top-10 right-0 z-20 bg-white w-auto`}>
                 {purchasedCourses.length > 0 ? (
                     <>
                         {purchasedCourses.map((course, index) => (
                             <div
-                                className={`${index === purchasedCourses.length - 1 ? '' : 'border - b border-gray-200'}`}
+                                className={`border-b border-gray-200 w-auto`}
                                 key={course.id}>
                                 <Link href={`/courses/${course.id}/overview`} className="flex flex-row m-2">
                                     <Image
@@ -38,13 +38,23 @@ const Learning = ({purchasedCourses, loading}: dataProps) => {
                                         height={64}
                                         className="object-cover h-[64px] w-[64px]"
                                     />
-                                    <div className="ps-2 flex flex-col">
-                                        <h4>{course.title}</h4>
-                                        <Progress value={course.progressPercentage}/>
+                                    <div className="ps-2 flex flex-col w-80">
+                                        <p className={"text-base font-semibold mb"}>{course.title}</p>
+                                        {course.progressPercentage === 0 ? (
+                                            <Link href={`/learning`}
+                                                  className={"text-base font-semibold text-[#5022c3]"}>Start
+                                                learning</Link>
+                                        ) : (
+                                            <Progress value={course.progressPercentage} className={"mb-2"}/>)}
+
                                     </div>
                                 </Link>
                             </div>
+
                         ))}
+                        <Button variant={"destructive"} className={"mt-4 m-2"}>
+                            <Link href={`/learning`}>Forward to my learning process</Link>
+                        </Button>
                     </>
                 ) : (
                     <div className={"flex justify-center"}>
