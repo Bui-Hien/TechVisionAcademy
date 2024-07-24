@@ -69,11 +69,12 @@ const Learning = ({purchasedCourses, loading}: dataProps) => {
                             </div>
                         ) : (
                             <div className="flex flex-col w-full m-4">
-                                <h4>Ban dang khong hoc khoa nao</h4>
+                                <h4>You are not enrolled in any courses</h4>
                                 <Button variant={"destructive"} className={"mt-2"}>
-                                    <Link href={`/`}>Khám phá các khóa học</Link>
+                                    <Link href={`/`}>Explore Courses</Link>
                                 </Button>
                             </div>
+
                         )}
                     </div>
                 )}
