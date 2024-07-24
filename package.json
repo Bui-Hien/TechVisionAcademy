@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,7 +14,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@mux/mux-node": "^8.8.0",
     "@mux/mux-player-react": "^2.8.0",
-    "@prisma/client": "^5.16.2",
+    "@prisma/client": "^5.17.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
